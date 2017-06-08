@@ -1,8 +1,5 @@
 package edu.khasang.semiphore;
 
-/**
- * Created by Abakyr on 02.06.2017.
- */
 public class ThreadController {
     private volatile int coordinator = 1;
 
@@ -10,7 +7,7 @@ public class ThreadController {
         this.coordinator = coordinator;
     }
 
-    public synchronized void executeThread1() {
+    public synchronized void executeGreenThread() {
         while(coordinator != 1) {
             try {
                 wait();
@@ -23,7 +20,7 @@ public class ThreadController {
         coordinator = 2;
     }
 
-    public synchronized void executeThread2() {
+    public synchronized void executeYellowThread() {
         while(coordinator != 2) {
             try {
                 wait();
@@ -36,7 +33,7 @@ public class ThreadController {
         coordinator = 3;
     }
 
-    public synchronized void executeThread3() {
+    public synchronized void executeRedThread() {
         while(coordinator != 3) {
             try {
                 wait();

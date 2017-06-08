@@ -1,17 +1,15 @@
 package edu.khasang.semiphore;
 
-/**
- * Created by Abakyr on 02.06.2017.
- */
-public class Thread1 implements Runnable {
+
+public class GreenLight implements Runnable {
     private ThreadController threadController;
 
-    public Thread1(ThreadController threadController) {
+    public GreenLight(ThreadController threadController) {
         this.threadController = threadController;
     }
 
     public void run() {
-        threadController.executeThread1();
+        threadController.executeGreenThread();
         threadController.setCoordinator(2);
     }
 }
